@@ -72,13 +72,6 @@ border-radius:8px;
 
 }
 
-.visitor{
-
-margin-top:15px;
-font-size:18px;
-
-}
-
 .notes-grid{
 
 display:grid;
@@ -125,6 +118,57 @@ font-weight:600;
 
 opacity:0.8;
 margin-top:6px;
+
+}
+
+.footer{
+
+background:#020617;
+padding:40px;
+text-align:center;
+
+}
+
+.stats{
+
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+
+}
+
+.stat{
+
+text-align:center;
+
+}
+
+.stat i{
+
+font-size:28px;
+margin-bottom:10px;
+color:#22c55e;
+
+}
+
+.stat p{
+
+margin:5px 0;
+
+}
+
+.stat span{
+
+font-size:20px;
+font-weight:600;
+
+}
+
+.copyright{
+
+margin-top:20px;
+opacity:0.7;
 
 }
 
