@@ -1,12 +1,18 @@
 const notes=[
 
-{subject:"Machine Learning",topic:"Logistic Regression",page:"machine-learning.html"},
-{subject:"Operating Systems",topic:"Process Scheduling",page:"os.html"},
-{subject:"Computer Networks",topic:"OSI Model",page:"cn.html"},
-{subject:"Data Science",topic:"Data Cleaning",page:"datascience.html"},
-{subject:"Java Programming",topic:"OOP Concepts",page:"java.html"},
-{subject:"Software Engineering",topic:"SDLC",page:"se.html"},
-{subject:"Artificial Intelligence",topic:"Search Algorithms",page:"ai.html"}
+{subject:"Machine Learning",topic:"Logistic Regression",page:"machine-learning.html",topicPage:"logistic-regression.html"},
+
+{subject:"Operating Systems",topic:"Process Scheduling",page:"os.html",topicPage:"process-scheduling.html"},
+
+{subject:"Computer Networks",topic:"OSI Model",page:"cn.html",topicPage:"osi-model.html"},
+
+{subject:"Data Science",topic:"Data Cleaning",page:"datascience.html",topicPage:"data-cleaning.html"},
+
+{subject:"Java Programming",topic:"OOP Concepts",page:"java.html",topicPage:"oop.html"},
+
+{subject:"Software Engineering",topic:"SDLC",page:"se.html",topicPage:"sdlc.html"},
+
+{subject:"Artificial Intelligence",topic:"Search Algorithms",page:"ai.html",topicPage:"search-algorithms.html"}
 
 ];
 
@@ -22,7 +28,7 @@ const card=document.createElement("div");
 
 card.className="note-card";
 
-/* THIS MAKES CARD CLICKABLE */
+/* clicking subject opens subject page */
 card.onclick=()=>{
 window.location.href = note.page;
 };
@@ -34,7 +40,7 @@ card.innerHTML=`
 </div>
 
 <div class="note-topic">
-${note.topic}
+<a href="${note.topicPage}" class="topic-link">${note.topic}</a>
 </div>
 
 `;
