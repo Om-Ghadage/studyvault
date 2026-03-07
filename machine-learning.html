@@ -2,29 +2,135 @@
 <html>
 
 <head>
+
 <title>Machine Learning Notes</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins, sans-serif;
+background:#020617;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#020617;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+/* TITLE */
+
+.page-title{
+text-align:center;
+margin-top:40px;
+font-size:36px;
+}
+
+/* NOTES GRID */
+
+.notes-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:50px;
+}
+
+/* NOTE CARD */
+
+.note-card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:14px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.note-card:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* NOTE TITLE */
+
+.note-card h3{
+margin-bottom:10px;
+font-size:20px;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+margin:20px;
+display:inline-block;
+padding:10px 20px;
+background:#6366f1;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.back-btn:hover{
+background:#4f46e5;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1 style="text-align:center">Machine Learning Notes</h1>
+<header>
+
+<div class="logo">StudyVault</div>
+
+<a href="index.html" class="back-btn">⬅ Back</a>
+
+</header>
+
+<h1 class="page-title">Machine Learning Notes</h1>
 
 <div class="notes-grid">
 
 <div class="note-card">
-<h3>Introduction to ML</h3>
-<p>Basics of machine learning.</p>
+<h3>Introduction to Machine Learning</h3>
+<p>Basics of machine learning and its applications.</p>
 </div>
 
 <div class="note-card">
 <h3>Logistic Regression</h3>
-<p>Used for classification problems.</p>
+<p>Used for classification problems in machine learning.</p>
 </div>
 
 <div class="note-card">
-<h3>Decision Tree</h3>
-<p>Tree-based learning algorithm.</p>
+<h3>Decision Trees</h3>
+<p>Tree-based supervised learning algorithm.</p>
+</div>
+
+<div class="note-card">
+<h3>KNN Algorithm</h3>
+<p>K-Nearest Neighbor classification method.</p>
+</div>
+
+<div class="note-card">
+<h3>Support Vector Machine</h3>
+<p>Powerful algorithm used for classification.</p>
+</div>
+
+<div class="note-card">
+<h3>Naive Bayes</h3>
+<p>Probabilistic classifier based on Bayes theorem.</p>
 </div>
 
 </div>
