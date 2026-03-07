@@ -1,73 +1,73 @@
- const notes=[
+const notes=[
 
- {subject:"Machine Learning",topic:"Logistic Regression"},
- {subject:"Operating Systems",topic:"Process Scheduling"},
- {subject:"Computer Networks",topic:"OSI Model"},
- {subject:"Data Science",topic:"Data Cleaning"},
- {subject:"Java Programming",topic:"OOP Concepts"},
- {subject:"Software Engineering",topic:"SDLC"},
- {subject:"Artificial Intelligence",topic:"Search Algorithms"}
+{subject:"Machine Learning",topic:"Logistic Regression"},
+{subject:"Operating Systems",topic:"Process Scheduling"},
+{subject:"Computer Networks",topic:"OSI Model"},
+{subject:"Data Science",topic:"Data Cleaning"},
+{subject:"Java Programming",topic:"OOP Concepts"},
+{subject:"Software Engineering",topic:"SDLC"},
+{subject:"Artificial Intelligence",topic:"Search Algorithms"}
 
- ];
+];
 
- function displayNotes(data){
+function displayNotes(data){
 
- const container=document.getElementById("notesContainer");
+const container=document.getElementById("notesContainer");
 
- container.innerHTML="";
+container.innerHTML="";
 
- data.forEach((note,i)=>{
+data.forEach((note,i)=>{
 
- const card=document.createElement("div");
+const card=document.createElement("div");
 
- card.className="note-card";
+card.className="note-card";
 
 card.innerHTML=`
 
- <div class="note-subject">
- <i class="fa-solid fa-book"></i> ${note.subject}
- </div>
+<div class="note-subject">
+<i class="fa-solid fa-book"></i> ${note.subject}
+</div>
 
- <div class="note-topic">
- ${note.topic}
- </div>
+<div class="note-topic">
+${note.topic}
+</div>
 
- `;
+`;
 
- container.appendChild(card);
+container.appendChild(card);
 
- setTimeout(()=>{
- card.classList.add("show")
- },100*i)
+setTimeout(()=>{
+card.classList.add("show")
+},100*i)
 
 });
 
- }
+}
 
- function searchNotes(){
+function searchNotes(){
 
- const value=document.getElementById("searchInput").value.toLowerCase();
+const value=document.getElementById("searchInput").value.toLowerCase();
 
- const filtered=notes.filter(n=>
- n.subject.toLowerCase().includes(value)
- );
+const filtered=notes.filter(n=>
+n.subject.toLowerCase().includes(value)
+);
 
- displayNotes(filtered);
+displayNotes(filtered);
 
- }
+}
 
- document.getElementById("themeToggle").onclick=()=>{
- document.body.classList.toggle("light")
+document.getElementById("themeToggle").onclick=()=>{
 
- }
- window.onload=()=>{
- setTimeout(()=>{
- document.getElementById("loader").style.display="none"
- },1200)
- }
+document.body.classList.toggle("light")
 
- displayNotes(notes);
- });
+}
 
- Run when page loads
-displayNotes();
+window.onload=()=>{
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none"
+},1200)
+
+}
+
+displayNotes(notes);
