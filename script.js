@@ -1,73 +1,69 @@
-const notes=[
+// ===== PAGE NAVIGATION =====
 
-{subject:"Machine Learning",topic:"Logistic Regression"},
-{subject:"Operating Systems",topic:"Process Scheduling"},
-{subject:"Computer Networks",topic:"OSI Model"},
-{subject:"Data Science",topic:"Data Cleaning"},
-{subject:"Java Programming",topic:"OOP Concepts"},
-{subject:"Software Engineering",topic:"SDLC"},
-{subject:"Artificial Intelligence",topic:"Search Algorithms"}
+// function to open notes pages
+function openSubject(subject) {
 
+    // hide all sections
+    document.querySelectorAll(".subject-page").forEach(page => {
+        page.style.display = "none";
+    });
+
+    // show selected subject
+    document.getElementById(subject).style.display = "block";
+
+}
+
+
+// ===== MACHINE LEARNING NOTES =====
+
+// list of notes
+const mlNotes = [
+    {
+        title: "Introduction to Machine Learning",
+        content: "Machine Learning is a field of Artificial Intelligence where computers learn from data without being explicitly programmed."
+    },
+    {
+        title: "Supervised Learning",
+        content: "Supervised learning uses labeled datasets to train algorithms that classify data or predict outcomes."
+    },
+    {
+        title: "Unsupervised Learning",
+        content: "Unsupervised learning finds hidden patterns or structures in input data without labeled responses."
+    },
+    {
+        title: "Regression",
+        content: "Regression is used to predict continuous values such as price prediction or temperature."
+    },
+    {
+        title: "Classification",
+        content: "Classification predicts categories such as spam or not spam."
+    }
 ];
 
-function displayNotes(data){
 
-const container=document.getElementById("notesContainer");
+// function to load notes
+function loadMLNotes(){
 
-container.innerHTML="";
+    const container = document.getElementById("ml-notes");
 
-data.forEach((note,i)=>{
+    container.innerHTML = "";
 
-const card=document.createElement("div");
+    mlNotes.forEach(note => {
 
-card.className="note-card";
+        const div = document.createElement("div");
+        div.className = "note-card";
 
-card.innerHTML=`
+        div.innerHTML = `
+            <h3>${note.title}</h3>
+            <p>${note.content}</p>
+        `;
 
-<div class="note-subject">
-<i class="fa-solid fa-book"></i> ${note.subject}
-</div>
+        container.appendChild(div);
 
-<div class="note-topic">
-${note.topic}
-</div>
-
-`;
-
-container.appendChild(card);
-
-setTimeout(()=>{
-card.classList.add("show")
-},100*i)
-
-});
+    });
 
 }
 
-function searchNotes(){
 
-const value=document.getElementById("searchInput").value.toLowerCase();
-
-const filtered=notes.filter(n=>
-n.subject.toLowerCase().includes(value)
-);
-
-displayNotes(filtered);
-
-}
-
-document.getElementById("themeToggle").onclick=()=>{
-
-document.body.classList.toggle("light")
-
-}
-
-window.onload=()=>{
-
-setTimeout(()=>{
-document.getElementById("loader").style.display="none"
-},1200)
-
-}
-
-displayNotes(notes);
+// run when page loads
+document.addEventListener("DOMContentLoaded", loadMLNotes);
