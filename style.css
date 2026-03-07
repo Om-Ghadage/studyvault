@@ -19,7 +19,7 @@ padding:20px 40px;
 
 .logo{
 
-font-size:26px;
+font-size:28px;
 font-weight:700;
 
 }
@@ -44,8 +44,8 @@ align-items:center;
 text-align:center;
 
 background:linear-gradient(120deg,#2563eb,#9333ea);
-
-animation:gradientMove 8s infinite alternate;
+background-size:200% 200%;
+animation:gradientMove 6s infinite alternate;
 
 }
 
@@ -69,6 +69,13 @@ padding:12px;
 width:280px;
 border:none;
 border-radius:8px;
+
+}
+
+.visitor{
+
+margin-top:15px;
+font-size:18px;
 
 }
 
@@ -121,8 +128,6 @@ margin-top:6px;
 
 }
 
-/* loader */
-
 #loader{
 
 position:fixed;
@@ -153,8 +158,6 @@ animation:spin 1s linear infinite;
 100%{transform:rotate(360deg)}
 
 }
-
-/* light mode */
 
 .light{
 
