@@ -1,18 +1,18 @@
 const notes=[
 
-{subject:"Machine Learning",topic:"Logistic Regression",page:"machine-learning.html",topicPage:"logistic-regression.html"},
+{subject:"Machine Learning",topic:"Logistic Regression",page:"machine-learning.html"},
 
-{subject:"Operating Systems",topic:"Process Scheduling",page:"os.html",topicPage:"process-scheduling.html"},
+{subject:"Operating Systems",topic:"Process Scheduling",page:"os.html"},
 
-{subject:"Computer Networks",topic:"OSI Model",page:"cn.html",topicPage:"osi-model.html"},
+{subject:"Computer Networks",topic:"OSI Model",page:"cn.html"},
 
-{subject:"Data Science",topic:"Data Cleaning",page:"datascience.html",topicPage:"data-cleaning.html"},
+{subject:"Data Science",topic:"Data Cleaning",page:"datascience.html"},
 
-{subject:"Java Programming",topic:"OOP Concepts",page:"java.html",topicPage:"oop.html"},
+{subject:"Java Programming",topic:"OOP Concepts",page:"java.html"},
 
-{subject:"Software Engineering",topic:"SDLC",page:"se.html",topicPage:"sdlc.html"},
+{subject:"Software Engineering",topic:"SDLC",page:"se.html"},
 
-{subject:"Artificial Intelligence",topic:"Search Algorithms",page:"ai.html",topicPage:"search-algorithms.html"}
+{subject:"Artificial Intelligence",topic:"Search Algorithms",page:"ai.html"}
 
 ];
 
@@ -82,3 +82,4 @@ document.getElementById("loader").style.display="none"
 }
 
 displayNotes(notes);
+
