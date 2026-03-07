@@ -1,12 +1,12 @@
 const notes=[
 
-{subject:"Machine Learning",topic:"Logistic Regression"},
-{subject:"Operating Systems",topic:"Process Scheduling"},
-{subject:"Computer Networks",topic:"OSI Model"},
-{subject:"Data Science",topic:"Data Cleaning"},
-{subject:"Java Programming",topic:"OOP Concepts"},
-{subject:"Software Engineering",topic:"SDLC"},
-{subject:"Artificial Intelligence",topic:"Search Algorithms"}
+{subject:"Machine Learning",topic:"Logistic Regression",page:"machine-learning.html"},
+{subject:"Operating Systems",topic:"Process Scheduling",page:"os.html"},
+{subject:"Computer Networks",topic:"OSI Model",page:"cn.html"},
+{subject:"Data Science",topic:"Data Cleaning",page:"datascience.html"},
+{subject:"Java Programming",topic:"OOP Concepts",page:"java.html"},
+{subject:"Software Engineering",topic:"SDLC",page:"se.html"},
+{subject:"Artificial Intelligence",topic:"Search Algorithms",page:"ai.html"}
 
 ];
 
@@ -21,6 +21,11 @@ data.forEach((note,i)=>{
 const card=document.createElement("div");
 
 card.className="note-card";
+
+/* THIS MAKES CARD CLICKABLE */
+card.onclick=()=>{
+window.location.href = note.page;
+};
 
 card.innerHTML=`
 
