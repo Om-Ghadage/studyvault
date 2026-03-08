@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Tree Notes</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#2c3e50;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.code-box{
+    background:#eef3ff;
+    padding:15px;
+    border-left:5px solid #3498db;
+    font-family:monospace;
+    white-space:pre;
+}
+
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Decision Tree - Machine Learning Notes</h1>
+<p>Simple Explanation of Decision Tree Algorithm</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>1. Introduction</h2>
+<p>
+A Decision Tree is a supervised machine learning algorithm used for classification 
+and regression problems. It works like a tree structure where decisions are made 
+based on conditions.
+</p>
+</div>
+
+<div class="section">
+<h2>2. Structure of a Decision Tree</h2>
+<ul>
+<li><b>Root Node</b> – Starting point of the tree</li>
+<li><b>Decision Nodes</b> – Nodes where data splits based on conditions</li>
+<li><b>Leaf Nodes</b> – Final output or prediction</li>
+</ul>
+
+<div class="code-box">
+        Age?
+       /    \
+    <30     >30
+    /         \
+Student?     Income?
+ /    \        /   \
+Yes   No     High  Low
+Buy   Not    Buy   Not
+</div>
+
+</div>
+
+<div class="section">
+<h2>3. How Decision Trees Work</h2>
+<ol>
+<li>Start with the full dataset.</li>
+<li>Select the best feature to split the data.</li>
+<li>Create subsets based on the feature.</li>
+<li>Repeat the process for each subset.</li>
+<li>Stop when data is fully classified or depth limit is reached.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>4. Splitting Criteria</h2>
+
+<h3>Entropy</h3>
+<p>Measures impurity in the dataset.</p>
+
+<div class="code-box">
+Entropy = - Σ (p * log2(p))
+</div>
+
+<h3>Information Gain</h3>
+
+<div class="code-box">
+Information Gain = Entropy(parent) - Entropy(children)
+</div>
+
+<h3>Gini Index</h3>
+
+<div class="code-box">
+Gini = 1 - Σ (p²)
+</div>
+
+</div>
+
+<div class="section">
+<h2>5. Types of Decision Trees</h2>
+<ul>
+<li><b>Classification Tree</b> – Output is a category (Yes/No, Spam/Not Spam)</li>
+<li><b>Regression Tree</b> – Output is a numerical value (price, score)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>6. Advantages</h2>
+<ul>
+<li>Easy to understand and visualize</li>
+<li>Handles numerical and categorical data</li>
+<li>Requires little data preprocessing</li>
+<li>Works for classification and regression</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>7. Disadvantages</h2>
+<ul>
+<li>Can easily overfit</li>
+<li>Sensitive to small data changes</li>
+<li>Can become very complex</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. Applications</h2>
+<ul>
+<li>Medical diagnosis</li>
+<li>Fraud detection</li>
+<li>Customer segmentation</li>
+<li>Credit risk analysis</li>
+<li>Recommendation systems</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+<p>Machine Learning Notes - Decision Tree</p>
+</footer>
+
+</body>
+</html>
