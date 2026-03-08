@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KNN Algorithm Notes</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:#1f4e79;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#1f4e79;
+}
+
+ul,ol{
+    margin-left:20px;
+}
+
+.code-box{
+    background:#eef3ff;
+    padding:15px;
+    border-left:5px solid #3498db;
+    font-family:monospace;
+    white-space:pre;
+}
+
+footer{
+    background:#1f4e79;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>K-Nearest Neighbors (KNN) Algorithm</h1>
+<p>Machine Learning Notes</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>1. Introduction</h2>
+<p>
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for 
+classification and regression. It works by finding the nearest data points 
+(neighbors) to a new input and predicting the output based on those neighbors.
+</p>
+</div>
+
+<div class="section">
+<h2>2. Basic Idea</h2>
+<p>
+The algorithm looks at the <b>K closest data points</b> to a new sample and assigns 
+the most common class among those neighbors.
+</p>
+
+<div class="code-box">
+Example:
+
+K = 3
+
+Neighbors:
+Class A
+Class A
+Class B
+
+Prediction = Class A
+</div>
+
+</div>
+
+<div class="section">
+<h2>3. Steps of KNN Algorithm</h2>
+<ol>
+<li>Choose the number of neighbors (K).</li>
+<li>Calculate the distance between the new data point and all training data.</li>
+<li>Select the K nearest neighbors.</li>
+<li>Count the classes of the neighbors.</li>
+<li>Assign the majority class as the prediction.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>4. Distance Calculation</h2>
+
+<h3>Euclidean Distance</h3>
+
+<div class="code-box">
+Distance = √((x2 - x1)² + (y2 - y1)²)
+</div>
+
+<p>This is the most commonly used distance method in KNN.</p>
+
+</div>
+
+<div class="section">
+<h2>5. Types of KNN</h2>
+<ul>
+<li><b>Classification KNN</b> – Output is a category.</li>
+<li><b>Regression KNN</b> – Output is a numerical value.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>6. Advantages</h2>
+<ul>
+<li>Simple and easy to understand</li>
+<li>No training phase required</li>
+<li>Works well with small datasets</li>
+<li>Easy to implement</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>7. Disadvantages</h2>
+<ul>
+<li>Slow for large datasets</li>
+<li>Requires choosing the correct value of K</li>
+<li>Sensitive to noise in data</li>
+<li>High memory usage</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. Applications</h2>
+<ul>
+<li>Recommendation systems</li>
+<li>Pattern recognition</li>
+<li>Image classification</li>
+<li>Medical diagnosis</li>
+<li>Spam detection</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+<p>Machine Learning Notes - KNN Algorithm</p>
+</footer>
+
+</body>
+</html>
