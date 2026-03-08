@@ -1,81 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Logistic Regression Notes</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f9;
+color:#333;
+}
+
+header{
+background:#3a7bd5;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.container{
+width:80%;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#3a7bd5;
+}
+
+ul,ol{
+margin-left:20px;
+}
+
+.code-box{
+background:#eef3ff;
+padding:15px;
+border-left:5px solid #3498db;
+font-family:monospace;
+}
+
+footer{
+background:#3a7bd5;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">StudyVault</div>
+<h1>Logistic Regression</h1>
+<p>Machine Learning Notes</p>
 </header>
 
-<section class="hero">
-<h1>Logistic Regression</h1>
-</section>
+<div class="container">
 
-<div style="max-width:900px;margin:auto;padding:20px">
-
-<h2>Definition</h2>
+<div class="section">
+<h2>1. Introduction</h2>
 <p>
-Logistic Regression is a supervised machine learning algorithm used for classification problems. Unlike linear regression which predicts continuous values it predicts the probability that an input belongs to a specific class.
-<br>
-It is used for binary classification where the output can be one of two possible categories such as Yes/No, True/False or 0/1.
-It uses sigmoid function to convert inputs into a probability value between 0 and 1.
+Logistic Regression is a supervised machine learning algorithm used 
+for classification problems. It predicts the probability that an 
+input belongs to a particular category.
+</p>
+</div>
+
+<div class="section">
+<h2>2. Key Idea</h2>
+<p>
+Unlike Linear Regression, Logistic Regression predicts the probability 
+of a class using a sigmoid function.
 </p>
 
-<h2>Types of logistic regression</h2>
-  <p>Types of Logistic Regression
-Logistic regression can be classified into three main types based on the nature of the dependent variable:
-    <br>
+<div class="code-box">
+Sigmoid Function:
 
-1.Binomial Logistic Regression: This type is used when the dependent variable has only two possible categories. Examples include Yes/No, Pass/Fail or 0/1. It is the most common form of logistic regression and is used for binary classification problems.<br>
-2.Multinomial Logistic Regression: This is used when the dependent variable has three or more possible categories that are not ordered. For example, classifying animals into categories like "cat," "dog" or "sheep." It extends the binary logistic regression to handle multiple classes.<br>
-3.Ordinal Logistic Regression: This type applies when the dependent variable has three or more categories with a natural order or ranking. Examples include ratings like "low," "medium" and "high." It takes the order of the categories into account when modeling.</p><br>
-
-<h2>Assumptions of Logistic Regression</h2>
-Understanding the assumptions behind logistic regression is important to ensure the model is applied correctly, main assumptions are:<br>
-  
-1.Independent observations: Each data point is assumed to be independent of the others means there should be no correlation or dependence between the input samples.<br>
-2.Binary dependent variables: It takes the assumption that the dependent variable must be binary, means it can take only two values. For more than two categories SoftMax functions are used.<br>
-3.Linearity relationship between independent variables and log odds: The model assumes a linear relationship between the independent variables and the log odds of the dependent variable which means the predictors affect the log odds in a linear way.<br>
-4.No outliers: The dataset should not contain extreme outliers as they can distort the estimation of the logistic regression coefficients.<br>
-5.Large sample size: It requires a sufficiently large sample size to produce reliable and stable results.<br>
-  
-<h2>Key Points</h2>
-<ul>
-<li>Used for binary classification</li>
-<li>Output value between 0 and 1</li>
-<li>Uses sigmoid function</li>
-</ul>
-
-<h2>Sigmoid Function</h2>
-
-<p>1. The sigmoid function is a important part of logistic regression which is used to convert the raw output of the model into a probability value between 0 and 1.
-
-2. This function takes any real number and maps it into the range 0 to 1 forming an "S" shaped curve called the sigmoid curve or logistic curve. Because probabilities must lie between 0 and 1, the sigmoid function is perfect for this purpose.
-
-3. In logistic regression, we use a threshold value usually 0.5 to decide the class label.
-
-<ul>If the sigmoid output is same or above the threshold, the input is classified as Class 1.
-If it is below the threshold, the input is classified as Class 0.
-This approach helps to transform continuous input values into meaningful class predictions.</ul></p>
-<pre>
-σ(z) = 1 / (1 + e^-z)
-</pre>
-
-<h2>Applications</h2>
-
-<ul>
-<li>Email spam detection</li>
-<li>Disease prediction</li>
-<li>Fraud detection</li>
-</ul>
+P = 1 / (1 + e^(-z))
+</div>
 
 </div>
 
+<div class="section">
+<h2>3. How Logistic Regression Works</h2>
+<ol>
+<li>Take input features</li>
+<li>Calculate weighted sum</li>
+<li>Apply sigmoid function</li>
+<li>Convert probability into class label</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>4. Mathematical Model</h2>
+
+<div class="code-box">
+z = b0 + b1x1 + b2x2 + ... + bnxn
+
+P = 1 / (1 + e^-z)
+</div>
+
+<p>
+If P > 0.5 → Class 1  
+If P < 0.5 → Class 0
+</p>
+
+</div>
+
+<div class="section">
+<h2>5. Types of Logistic Regression</h2>
+<ul>
+<li><b>Binary Logistic Regression</b> – Two classes (Yes/No)</li>
+<li><b>Multinomial Logistic Regression</b> – More than two classes</li>
+<li><b>Ordinal Logistic Regression</b> – Ordered categories</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>6. Advantages</h2>
+<ul>
+<li>Simple and easy to implement</li>
+<li>Works well for binary classification</li>
+<li>Fast training process</li>
+<li>Interpretable results</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>7. Disadvantages</h2>
+<ul>
+<li>Not suitable for complex relationships</li>
+<li>Assumes linear relationship between variables</li>
+<li>Less accurate for large complex datasets</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. Applications</h2>
+<ul>
+<li>Spam email detection</li>
+<li>Disease prediction</li>
+<li>Credit risk analysis</li>
+<li>Customer churn prediction</li>
+<li>Marketing response prediction</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+<p>Machine Learning Notes - Logistic Regression</p>
+</footer>
+
 </body>
-
 </html>
-
