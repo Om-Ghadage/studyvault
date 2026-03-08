@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naive Bayes Notes</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f9;
+color:#333;
+}
+
+header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.container{
+width:80%;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#2c3e50;
+}
+
+.code-box{
+background:#eef3ff;
+padding:15px;
+border-left:5px solid #3498db;
+font-family:monospace;
+}
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Naive Bayes Classification</h1>
+<p>Machine Learning Notes</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>1. Introduction</h2>
+<p>
+Naive Bayes is a supervised machine learning algorithm based on 
+Bayes' Theorem. It is mainly used for classification problems 
+like spam detection and text classification.
+</p>
+</div>
+
+<div class="section">
+<h2>2. Bayes Theorem</h2>
+
+<div class="code-box">
+P(A|B) = (P(B|A) × P(A)) / P(B)
+</div>
+
+<p>
+Where:
+</p>
+
+<ul>
+<li>P(A|B) = Posterior probability</li>
+<li>P(B|A) = Likelihood</li>
+<li>P(A) = Prior probability</li>
+<li>P(B) = Evidence</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>3. Why it is called "Naive"</h2>
+<p>
+The algorithm assumes that all features are independent of each other, 
+which is a very simple (naive) assumption.
+</p>
+</div>
+
+<div class="section">
+<h2>4. Types of Naive Bayes</h2>
+<ul>
+<li>Gaussian Naive Bayes</li>
+<li>Multinomial Naive Bayes</li>
+<li>Bernoulli Naive Bayes</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>5. Advantages</h2>
+<ul>
+<li>Fast and simple</li>
+<li>Works well with large datasets</li>
+<li>Good for text classification</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>6. Disadvantages</h2>
+<ul>
+<li>Assumes feature independence</li>
+<li>Less accurate if assumption is violated</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>7. Applications</h2>
+<ul>
+<li>Email spam filtering</li>
+<li>Sentiment analysis</li>
+<li>Document classification</li>
+<li>Recommendation systems</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+<p>Machine Learning Notes - Naive Bayes</p>
+</footer>
+
+</body>
+</html>
