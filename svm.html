@@ -3,54 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Vector Machine Notes</title>
+<title>Support Vector Machine (SVM)</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f4f6f9;
-color:#333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    color:#333;
 }
 
 header{
-background:#34495e;
-color:white;
-text-align:center;
-padding:25px;
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:30px;
 }
 
 .container{
-width:80%;
-margin:auto;
-padding:20px;
+    width:80%;
+    margin:auto;
+    padding:20px;
 }
 
 .section{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2{
-color:#34495e;
+    color:#2c3e50;
 }
 
-.code-box{
-background:#eef3ff;
-padding:15px;
-border-left:5px solid #3498db;
-font-family:monospace;
+ul{
+    padding-left:20px;
+}
+
+.highlight{
+    background:#e8f0fe;
+    padding:10px;
+    border-left:4px solid #3498db;
+    margin:10px 0;
+}
+
+.diagram{
+    text-align:center;
+    margin-top:20px;
 }
 
 footer{
-background:#34495e;
-color:white;
-text-align:center;
-padding:15px;
+    text-align:center;
+    padding:15px;
+    background:#2c3e50;
+    color:white;
+    margin-top:20px;
 }
 
 </style>
@@ -60,71 +70,159 @@ padding:15px;
 
 <header>
 <h1>Support Vector Machine (SVM)</h1>
-<p>Machine Learning Notes</p>
+<p>Powerful Machine Learning Classification Algorithm</p>
 </header>
 
 <div class="container">
 
 <div class="section">
-<h2>1. Introduction</h2>
+<h2>1. What is Support Vector Machine?</h2>
+
 <p>
-Support Vector Machine (SVM) is a supervised machine learning algorithm 
-used for classification and regression. It finds the best boundary 
-called a <b>hyperplane</b> that separates different classes of data.
+Support Vector Machine (SVM) is a supervised machine learning algorithm
+used for classification and regression tasks. It is widely used for
+classification problems where the goal is to separate data points into
+different categories.
 </p>
+
+<p>
+SVM works by finding the optimal boundary called a <b>hyperplane</b>
+that best separates the data into different classes. The algorithm
+chooses the hyperplane that maximizes the margin between the two classes.
+</p>
+
+<p>
+The data points that are closest to the hyperplane are called
+<b>support vectors</b>. These points are very important because they
+determine the position of the decision boundary.
+</p>
+
+<div class="highlight">
+Example: Classifying emails as spam or not spam using the optimal separating boundary.
 </div>
 
+</div>
+
+
 <div class="section">
-<h2>2. Key Concepts</h2>
+<h2>2. Hyperplane Concept</h2>
+
+<p>
+A hyperplane is a decision boundary that separates different classes
+in the dataset. In two-dimensional space, the hyperplane is a straight line.
+In three-dimensional space, it becomes a plane.
+</p>
+
+<p>
+SVM chooses the hyperplane that maximizes the distance between the
+nearest data points of each class.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>3. Linear Decision Boundary</h2>
+
+<p>
+The decision boundary of a linear SVM can be represented using
+the following equation.
+</p>
+
+
+::contentReference[oaicite:0]{index=0}
+
+
+<p>
+Here, <b>w</b> represents the weight vector and <b>b</b> represents the bias.
+This equation defines the hyperplane separating the data classes.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>4. SVM Classification Example</h2>
+
+<p>
+The diagram below illustrates how SVM separates two classes using a
+maximum margin hyperplane.
+</p>
+
+<div class="diagram">
+
+<svg width="420" height="300">
+
+<!-- Class A -->
+<circle cx="80" cy="70" r="8" fill="#3498db"/>
+<circle cx="120" cy="110" r="8" fill="#3498db"/>
+<circle cx="100" cy="160" r="8" fill="#3498db"/>
+
+<!-- Class B -->
+<circle cx="320" cy="80" r="8" fill="#e74c3c"/>
+<circle cx="280" cy="130" r="8" fill="#e74c3c"/>
+<circle cx="300" cy="180" r="8" fill="#e74c3c"/>
+
+<!-- Hyperplane -->
+<line x1="200" y1="20" x2="200" y2="260" stroke="black" stroke-width="2"/>
+
+<text x="180" y="290">Decision Boundary</text>
+
+</svg>
+
+</div>
+
+</div>
+
+
+<div class="section">
+<h2>5. Types of SVM</h2>
+
 <ul>
-<li><b>Hyperplane</b> – Decision boundary separating classes</li>
-<li><b>Support Vectors</b> – Data points closest to the boundary</li>
-<li><b>Margin</b> – Distance between hyperplane and support vectors</li>
+<li><b>Linear SVM</b> – Used when data is linearly separable.</li>
+<li><b>Non-Linear SVM</b> – Used when data cannot be separated with a straight line.</li>
+<li><b>Kernel SVM</b> – Uses kernel functions to transform data into higher dimensions.</li>
 </ul>
+
 </div>
+
 
 <div class="section">
-<h2>3. How SVM Works</h2>
-<ol>
-<li>Plot data points in space</li>
-<li>Find the best separating line or hyperplane</li>
-<li>Maximize the margin between classes</li>
-<li>Classify new data based on the hyperplane</li>
-</ol>
-</div>
+<h2>6. Advantages of SVM</h2>
 
-<div class="section">
-<h2>4. Mathematical Representation</h2>
-
-<div class="code-box">
-Hyperplane equation:
-
-w.x + b = 0
-</div>
-
-</div>
-
-<div class="section">
-<h2>5. Advantages</h2>
 <ul>
-<li>Works well with high-dimensional data</li>
-<li>Effective in complex datasets</li>
-<li>Good accuracy</li>
+<li>Effective in high-dimensional spaces</li>
+<li>Works well with small datasets</li>
+<li>Provides clear margin of separation</li>
+<li>Memory efficient</li>
 </ul>
+
 </div>
 
+
 <div class="section">
-<h2>6. Disadvantages</h2>
+<h2>7. Real World Applications</h2>
+
 <ul>
-<li>Slow for very large datasets</li>
-<li>Difficult to choose kernel function</li>
+<li>Image classification</li>
+<li>Text categorization</li>
+<li>Handwriting recognition</li>
+<li>Bioinformatics and gene classification</li>
+<li>Spam email detection</li>
 </ul>
+
+<p>
+SVM is considered one of the most powerful machine learning algorithms
+for classification tasks due to its strong mathematical foundation
+and high accuracy.
+</p>
+
 </div>
 
 </div>
 
 <footer>
-<p>Machine Learning Notes - SVM</p>
+<p>Machine Learning | Support Vector Machine Algorithm</p>
 </footer>
 
 </body>
