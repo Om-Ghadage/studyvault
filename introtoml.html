@@ -49,6 +49,11 @@ ul{
     margin:10px 0;
 }
 
+.workflow{
+    text-align:center;
+    margin-top:20px;
+}
+
 footer{
     text-align:center;
     padding:15px;
@@ -70,61 +75,159 @@ footer{
 
 <div class="section">
 <h2>1. What is Machine Learning?</h2>
+
 <p>
-Machine Learning is a branch of Artificial Intelligence that allows computers
-to learn from data and make predictions or decisions without being explicitly programmed.
+Machine Learning is a field of Artificial Intelligence that enables computers to learn from data
+and improve their performance without being explicitly programmed. Instead of writing fixed rules
+for every problem, machine learning systems analyze data, recognize patterns, and make decisions
+or predictions automatically.
+</p>
+
+<p>
+The main goal of machine learning is to create models that can generalize from past experiences.
+These models are trained using large datasets, allowing them to identify relationships between
+different variables. Once trained, the model can be used to predict outcomes for new and unseen data.
+</p>
+
+<p>
+Machine learning has become extremely important because modern organizations generate massive
+amounts of data every day. Traditional software methods cannot efficiently process such data,
+while machine learning algorithms can quickly analyze patterns and generate valuable insights.
 </p>
 
 <div class="highlight">
-Example: Email spam filters learn from thousands of emails and predict whether a new email is spam or not.
+Example: Email spam filters analyze thousands of emails and learn patterns
+that indicate whether an email is spam or legitimate.
 </div>
+
+<p>
+Machine learning is used in many technologies such as recommendation systems,
+voice recognition, fraud detection, healthcare diagnosis, and autonomous vehicles.
+</p>
+
 </div>
+
 
 <div class="section">
 <h2>2. Basic Process of Machine Learning</h2>
+
+<p>
+The machine learning process typically follows several steps that allow the system
+to learn from data and produce accurate predictions.
+</p>
+
 <ul>
-<li><b>Collect Data</b> – Gather relevant information.</li>
-<li><b>Train Model</b> – Use algorithms to learn patterns.</li>
-<li><b>Test Model</b> – Evaluate performance with new data.</li>
-<li><b>Make Predictions</b> – Use the model in real-world applications.</li>
+<li><b>Collect Data</b> – Gather data from databases, sensors, or online platforms.</li>
+<li><b>Prepare Data</b> – Clean the data and remove errors or missing values.</li>
+<li><b>Train Model</b> – Apply algorithms to learn patterns from the dataset.</li>
+<li><b>Test Model</b> – Evaluate the model using unseen data.</li>
+<li><b>Make Predictions</b> – Use the trained model for real-world applications.</li>
 </ul>
+
+<div class="workflow">
+
+<h3>Machine Learning Workflow</h3>
+
+<svg width="900" height="170">
+
+<rect x="20" y="60" width="140" height="50" fill="#3498db" rx="8"/>
+<text x="90" y="90" fill="white" text-anchor="middle">Data Collection</text>
+
+<rect x="200" y="60" width="140" height="50" fill="#9b59b6" rx="8"/>
+<text x="270" y="90" fill="white" text-anchor="middle">Data Cleaning</text>
+
+<rect x="380" y="60" width="140" height="50" fill="#27ae60" rx="8"/>
+<text x="450" y="90" fill="white" text-anchor="middle">Model Training</text>
+
+<rect x="560" y="60" width="140" height="50" fill="#e67e22" rx="8"/>
+<text x="630" y="90" fill="white" text-anchor="middle">Model Testing</text>
+
+<rect x="740" y="60" width="140" height="50" fill="#e74c3c" rx="8"/>
+<text x="810" y="90" fill="white" text-anchor="middle">Prediction</text>
+
+<line x1="160" y1="85" x2="200" y2="85" stroke="black" marker-end="url(#arrow)"/>
+<line x1="340" y1="85" x2="380" y2="85" stroke="black" marker-end="url(#arrow)"/>
+<line x1="520" y1="85" x2="560" y2="85" stroke="black" marker-end="url(#arrow)"/>
+<line x1="700" y1="85" x2="740" y2="85" stroke="black" marker-end="url(#arrow)"/>
+
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3"
+orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+</marker>
+</defs>
+
+</svg>
+
 </div>
+
+</div>
+
 
 <div class="section">
 <h2>3. Types of Machine Learning</h2>
 
 <h3>Supervised Learning</h3>
-<p>Uses labeled data to train the model.</p>
+<p>
+Supervised learning uses labeled datasets where the correct output is already known.
+The algorithm learns the relationship between input and output so that it can predict
+results for new data.
+</p>
+
 <ul>
 <li>Linear Regression</li>
 <li>Decision Trees</li>
 <li>Support Vector Machines</li>
+<li>Neural Networks</li>
 </ul>
 
+
 <h3>Unsupervised Learning</h3>
-<p>Works with unlabeled data and finds hidden patterns.</p>
+<p>
+Unsupervised learning deals with unlabeled data. The algorithm finds hidden patterns
+or groupings in the dataset without predefined outputs.
+</p>
+
 <ul>
 <li>K-Means Clustering</li>
 <li>Hierarchical Clustering</li>
+<li>Association Rule Learning</li>
 </ul>
 
+
 <h3>Reinforcement Learning</h3>
-<p>Model learns by trial and error using rewards and penalties.</p>
+<p>
+Reinforcement learning allows machines to learn by interacting with an environment.
+The system receives rewards or penalties for actions and gradually improves its strategy.
+</p>
+
 </div>
+
 
 <div class="section">
 <h2>4. Real World Applications</h2>
+
 <ul>
-<li>Movie recommendations</li>
+<li>Movie and music recommendation systems</li>
 <li>Email spam detection</li>
 <li>Voice assistants</li>
 <li>Self-driving cars</li>
-<li>Product recommendations</li>
+<li>Product recommendations in e-commerce</li>
+<li>Fraud detection in banking</li>
+<li>Medical diagnosis systems</li>
 </ul>
+
+<p>
+These applications demonstrate how machine learning helps organizations automate
+tasks, analyze data efficiently, and improve decision-making.
+</p>
+
 </div>
+
 
 <div class="section">
 <h2>5. Programming Languages for ML</h2>
+
 <ul>
 <li>Python</li>
 <li>R</li>
@@ -133,14 +236,23 @@ Example: Email spam filters learn from thousands of emails and predict whether a
 </ul>
 
 <h3>Popular ML Libraries</h3>
+
 <ul>
 <li>TensorFlow</li>
 <li>PyTorch</li>
 <li>Scikit-learn</li>
+<li>Keras</li>
 </ul>
+
+<p>
+Among these languages, Python is the most widely used because it is easy to learn
+and has a large number of powerful libraries for machine learning and data science.
+</p>
+
 </div>
 
 </div>
+
 
 <footer>
 <p>Machine Learning Basics | Educational Demo Page</p>
