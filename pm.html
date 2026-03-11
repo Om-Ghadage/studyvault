@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Management - Operating System</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f4f6f9;
+color:#333;
+}
+
+header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.container{
+width:80%;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#2c3e50;
+}
+
+ul{
+padding-left:20px;
+}
+
+.highlight{
+background:#e8f0fe;
+padding:10px;
+border-left:4px solid #3498db;
+margin:10px 0;
+}
+
+.diagram{
+text-align:center;
+margin-top:20px;
+}
+
+footer{
+text-align:center;
+padding:15px;
+background:#2c3e50;
+color:white;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Process Management</h1>
+<p>Operating System Concept</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+
+<h2>1. What is a Process?</h2>
+
+<p>
+A process is a program that is currently being executed by the computer.
+When a program is stored on disk it is just a passive entity, but when it
+is loaded into memory and executed by the CPU it becomes a process.
+</p>
+
+<p>
+The operating system is responsible for managing multiple processes
+efficiently so that the CPU can execute tasks smoothly.
+</p>
+
+<div class="highlight">
+Example: When you open Google Chrome, Microsoft Word, or a music player,
+each application runs as a separate process in the operating system.
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>2. Characteristics of a Process</h2>
+
+<ul>
+<li>Each process has a unique Process ID (PID)</li>
+<li>Processes run independently</li>
+<li>Each process requires memory and CPU resources</li>
+<li>The OS controls the execution of processes</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>3. Process States</h2>
+
+<p>
+A process moves through different states during its life cycle.
+</p>
+
+<ul>
+<li><b>New</b> – Process is being created.</li>
+<li><b>Ready</b> – Process is waiting for CPU allocation.</li>
+<li><b>Running</b> – Process is currently being executed.</li>
+<li><b>Waiting</b> – Process is waiting for I/O operation.</li>
+<li><b>Terminated</b> – Process has finished execution.</li>
+</ul>
+
+<div class="diagram">
+
+<svg width="500" height="280">
+
+<rect x="200" y="10" width="100" height="40" fill="#3498db"/>
+<text x="250" y="35" text-anchor="middle" fill="white">New</text>
+
+<rect x="60" y="100" width="100" height="40" fill="#27ae60"/>
+<text x="110" y="125" text-anchor="middle" fill="white">Ready</text>
+
+<rect x="200" y="100" width="100" height="40" fill="#e67e22"/>
+<text x="250" y="125" text-anchor="middle" fill="white">Running</text>
+
+<rect x="360" y="100" width="100" height="40" fill="#9b59b6"/>
+<text x="410" y="125" text-anchor="middle" fill="white">Waiting</text>
+
+<rect x="200" y="200" width="120" height="40" fill="#e74c3c"/>
+<text x="260" y="225" text-anchor="middle" fill="white">Terminated</text>
+
+<line x1="250" y1="50" x2="110" y2="100" stroke="black"/>
+<line x1="160" y1="120" x2="200" y2="120" stroke="black"/>
+<line x1="300" y1="120" x2="360" y2="120" stroke="black"/>
+<line x1="250" y1="140" x2="260" y2="200" stroke="black"/>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>4. Process Control Block (PCB)</h2>
+
+<p>
+The Process Control Block is a data structure used by the operating
+system to store information about a process.
+</p>
+
+<p>
+Each process has its own PCB which helps the operating system manage
+the process effectively.
+</p>
+
+<h3>Information stored in PCB:</h3>
+
+<ul>
+<li>Process ID</li>
+<li>Process state</li>
+<li>CPU registers</li>
+<li>Memory management information</li>
+<li>Scheduling information</li>
+<li>I/O status</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>5. Context Switching</h2>
+
+<p>
+Context switching occurs when the CPU switches from one process to
+another. During this process, the state of the current process is
+saved in the PCB and the state of the next process is loaded.
+</p>
+
+<div class="highlight">
+Example: While playing music and browsing the internet at the same time,
+the CPU rapidly switches between processes to give the illusion that
+both tasks are running simultaneously.
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>6. Interprocess Communication (IPC)</h2>
+
+<p>
+Processes sometimes need to communicate with each other to share data.
+This communication is known as Interprocess Communication.
+</p>
+
+<h3>Methods of IPC:</h3>
+
+<ul>
+<li>Shared Memory</li>
+<li>Message Passing</li>
+<li>Pipes</li>
+<li>Sockets</li>
+</ul>
+
+<p>
+IPC is important for synchronization and data sharing between processes.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>7. Advantages of Process Management</h2>
+
+<ul>
+<li>Improves CPU utilization</li>
+<li>Supports multitasking</li>
+<li>Ensures smooth execution of programs</li>
+<li>Allows multiple applications to run simultaneously</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+<p>Operating System | Process Management</p>
+</footer>
+
+</body>
+</html>
