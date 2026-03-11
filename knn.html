@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KNN Algorithm Notes</title>
+<title>K-Nearest Neighbors (KNN) Algorithm</title>
 
 <style>
 
@@ -15,10 +15,10 @@ body{
 }
 
 header{
-    background:#1f4e79;
+    background:#2c3e50;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
 .container{
@@ -32,30 +32,35 @@ header{
     padding:20px;
     margin-bottom:20px;
     border-radius:8px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2{
-    color:#1f4e79;
+    color:#2c3e50;
 }
 
-ul,ol{
-    margin-left:20px;
+ul{
+    padding-left:20px;
 }
 
-.code-box{
-    background:#eef3ff;
-    padding:15px;
-    border-left:5px solid #3498db;
-    font-family:monospace;
-    white-space:pre;
+.highlight{
+    background:#e8f0fe;
+    padding:10px;
+    border-left:4px solid #3498db;
+    margin:10px 0;
+}
+
+.diagram{
+    text-align:center;
+    margin-top:20px;
 }
 
 footer{
-    background:#1f4e79;
-    color:white;
     text-align:center;
     padding:15px;
+    background:#2c3e50;
+    color:white;
+    margin-top:20px;
 }
 
 </style>
@@ -65,109 +70,152 @@ footer{
 
 <header>
 <h1>K-Nearest Neighbors (KNN) Algorithm</h1>
-<p>Machine Learning Notes</p>
+<p>Instance-Based Machine Learning Algorithm</p>
 </header>
 
 <div class="container">
 
 <div class="section">
-<h2>1. Introduction</h2>
-<p>
-K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for 
-classification and regression. It works by finding the nearest data points 
-(neighbors) to a new input and predicting the output based on those neighbors.
-</p>
-</div>
+<h2>1. What is KNN?</h2>
 
-<div class="section">
-<h2>2. Basic Idea</h2>
 <p>
-The algorithm looks at the <b>K closest data points</b> to a new sample and assigns 
-the most common class among those neighbors.
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used
+for classification and regression tasks. It works by identifying the
+nearest data points in the dataset and assigning a class based on the
+majority class among the nearest neighbors.
 </p>
 
-<div class="code-box">
-Example:
+<p>
+The algorithm assumes that similar data points exist close to each other.
+When a new data point is introduced, the algorithm finds the K closest
+points and determines the class based on their labels.
+</p>
 
-K = 3
-
-Neighbors:
-Class A
-Class A
-Class B
-
-Prediction = Class A
+<div class="highlight">
+Example: If most of the nearest neighbors belong to class A,
+the new data point will also be classified as class A.
 </div>
 
 </div>
+
 
 <div class="section">
-<h2>3. Steps of KNN Algorithm</h2>
-<ol>
-<li>Choose the number of neighbors (K).</li>
-<li>Calculate the distance between the new data point and all training data.</li>
-<li>Select the K nearest neighbors.</li>
-<li>Count the classes of the neighbors.</li>
-<li>Assign the majority class as the prediction.</li>
-</ol>
-</div>
+<h2>2. How KNN Works</h2>
 
-<div class="section">
-<h2>4. Distance Calculation</h2>
-
-<h3>Euclidean Distance</h3>
-
-<div class="code-box">
-Distance = √((x2 - x1)² + (y2 - y1)²)
-</div>
-
-<p>This is the most commonly used distance method in KNN.</p>
-
-</div>
-
-<div class="section">
-<h2>5. Types of KNN</h2>
 <ul>
-<li><b>Classification KNN</b> – Output is a category.</li>
-<li><b>Regression KNN</b> – Output is a numerical value.</li>
+<li><b>Step 1:</b> Choose the number of neighbors (K value).</li>
+<li><b>Step 2:</b> Calculate the distance between the new data point and all other data points.</li>
+<li><b>Step 3:</b> Select the K nearest data points.</li>
+<li><b>Step 4:</b> Count the classes among these neighbors.</li>
+<li><b>Step 5:</b> Assign the class with the highest frequency.</li>
 </ul>
+
+<p>
+Distance is usually calculated using Euclidean distance,
+although other distance metrics can also be used.
+</p>
+
 </div>
 
+
 <div class="section">
-<h2>6. Advantages</h2>
+<h2>3. Distance Formula</h2>
+
+<p>
+The Euclidean distance formula is commonly used to measure the distance
+between two data points in KNN.
+</p>
+
+
+::contentReference[oaicite:0]{index=0}
+
+
+</div>
+
+
+<div class="section">
+<h2>4. KNN Classification Example</h2>
+
+<p>
+The diagram below shows a simple KNN classification example where
+a new point is classified based on its nearest neighbors.
+</p>
+
+<div class="diagram">
+
+<svg width="400" height="300">
+
+<!-- Class A -->
+<circle cx="80" cy="80" r="8" fill="#3498db"/>
+<circle cx="120" cy="100" r="8" fill="#3498db"/>
+<circle cx="90" cy="140" r="8" fill="#3498db"/>
+
+<!-- Class B -->
+<circle cx="260" cy="80" r="8" fill="#e74c3c"/>
+<circle cx="300" cy="120" r="8" fill="#e74c3c"/>
+<circle cx="250" cy="150" r="8" fill="#e74c3c"/>
+
+<!-- New Point -->
+<circle cx="180" cy="120" r="10" fill="#2ecc71"/>
+
+<text x="160" y="105">New Point</text>
+
+</svg>
+
+</div>
+
+</div>
+
+
+<div class="section">
+<h2>5. Advantages of KNN</h2>
+
 <ul>
 <li>Simple and easy to understand</li>
 <li>No training phase required</li>
 <li>Works well with small datasets</li>
-<li>Easy to implement</li>
+<li>Can be used for classification and regression</li>
 </ul>
+
 </div>
 
+
 <div class="section">
-<h2>7. Disadvantages</h2>
+<h2>6. Limitations of KNN</h2>
+
 <ul>
 <li>Slow for large datasets</li>
-<li>Requires choosing the correct value of K</li>
-<li>Sensitive to noise in data</li>
-<li>High memory usage</li>
+<li>Requires large memory</li>
+<li>Sensitive to irrelevant features</li>
+<li>Choosing the correct K value can be difficult</li>
 </ul>
+
 </div>
 
+
 <div class="section">
-<h2>8. Applications</h2>
+<h2>7. Real World Applications</h2>
+
 <ul>
 <li>Recommendation systems</li>
+<li>Image recognition</li>
 <li>Pattern recognition</li>
-<li>Image classification</li>
 <li>Medical diagnosis</li>
-<li>Spam detection</li>
+<li>Fraud detection</li>
 </ul>
+
+<p>
+KNN is widely used in many machine learning applications
+because of its simplicity and effectiveness.
+</p>
+
 </div>
+
 
 </div>
 
 <footer>
-<p>Machine Learning Notes - KNN Algorithm</p>
+<p>Machine Learning | KNN Algorithm</p>
 </footer>
 
 </body>
