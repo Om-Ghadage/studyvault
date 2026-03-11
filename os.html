@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Operating System Notes</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins, sans-serif;
+background:#020617;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#020617;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+/* TITLE */
+
+.page-title{
+text-align:center;
+margin-top:40px;
+font-size:36px;
+}
+
+/* NOTES GRID */
+
+.notes-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:50px;
+}
+
+/* NOTE CARD */
+
+.note-card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:14px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.note-card:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* NOTE TITLE */
+
+.note-card h3{
+margin-bottom:10px;
+font-size:20px;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+margin:20px;
+display:inline-block;
+padding:10px 20px;
+background:#6366f1;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.back-btn:hover{
+background:#4f46e5;
+}
+
+a{
+  text-decoration:none
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">StudyVault</div>
+
+<a href="index.html" class="back-btn">⬅ Back</a>
+
+</header>
+
+<h1 class="page-title">Operating System Notes</h1>
+
+<div class="notes-grid">
+
+<div class="note-card">
+<h3><a href="introtoml">Introduction to Machine Learning</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="linear.html">Linear regression</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="logistic-regression.html">Logistic Regression</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="decisiontree.html">Decision Trees</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="knn.html">KNN Algorithm</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="svm.html">Support Vector Machine</a></h3>
+</div>
+
+<div class="note-card">
+<h3><a href="naivebayes.html">Naive Bayes</a></h3>
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
