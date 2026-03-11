@@ -3,145 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naive Bayes Notes</title>
+<title>Naive Bayes Algorithm</title>
 
 <style>
-
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f4f6f9;
-color:#333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    color:#333;
 }
 
 header{
-background:#2c3e50;
-color:white;
-text-align:center;
-padding:25px;
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:30px;
 }
 
 .container{
-width:80%;
-margin:auto;
-padding:20px;
+    width:80%;
+    margin:auto;
+    padding:20px;
 }
 
 .section{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2{
-color:#2c3e50;
+    color:#2c3e50;
 }
 
-.code-box{
-background:#eef3ff;
-padding:15px;
-border-left:5px solid #3498db;
-font-family:monospace;
+.highlight{
+    background:#e8f0fe;
+    padding:10px;
+    border-left:4px solid #3498db;
+    margin:10px 0;
 }
 
 footer{
-background:#2c3e50;
-color:white;
-text-align:center;
-padding:15px;
+    text-align:center;
+    padding:15px;
+    background:#2c3e50;
+    color:white;
 }
-
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Naive Bayes Classification</h1>
-<p>Machine Learning Notes</p>
+<h1>Naive Bayes Algorithm</h1>
+<p>Probability Based Machine Learning Algorithm</p>
 </header>
 
 <div class="container">
 
 <div class="section">
-<h2>1. Introduction</h2>
+
+<h2>1. What is Naive Bayes?</h2>
+
 <p>
-Naive Bayes is a supervised machine learning algorithm based on 
-Bayes' Theorem. It is mainly used for classification problems 
-like spam detection and text classification.
+Naive Bayes is a supervised machine learning algorithm used mainly
+for classification tasks. It is based on probability and uses
+Bayes’ theorem to predict the class of a given data point.
 </p>
+
+<p>
+The term "Naive" comes from the assumption that the features
+in the dataset are independent of each other. Although this
+assumption is rarely true in real life, the algorithm still
+works surprisingly well in many applications.
+</p>
+
+<div class="highlight">
+Example: Email spam filtering where the algorithm predicts
+whether an email is spam based on certain words.
+</div>
+
 </div>
 
 <div class="section">
+
 <h2>2. Bayes Theorem</h2>
 
-<div class="code-box">
-P(A|B) = (P(B|A) × P(A)) / P(B)
-</div>
+<p>
+Naive Bayes is based on Bayes' theorem which calculates the probability
+of a class given some observed features.
+</p>
+
+
+::contentReference[oaicite:0]{index=0}
+
 
 <p>
 Where:
 </p>
 
 <ul>
-<li>P(A|B) = Posterior probability</li>
+<li>P(A|B) = Posterior Probability</li>
 <li>P(B|A) = Likelihood</li>
-<li>P(A) = Prior probability</li>
+<li>P(A) = Prior Probability</li>
 <li>P(B) = Evidence</li>
 </ul>
 
 </div>
 
 <div class="section">
-<h2>3. Why it is called "Naive"</h2>
-<p>
-The algorithm assumes that all features are independent of each other, 
-which is a very simple (naive) assumption.
-</p>
-</div>
 
-<div class="section">
-<h2>4. Types of Naive Bayes</h2>
+<h2>3. Types of Naive Bayes</h2>
+
 <ul>
-<li>Gaussian Naive Bayes</li>
-<li>Multinomial Naive Bayes</li>
-<li>Bernoulli Naive Bayes</li>
+<li><b>Gaussian Naive Bayes</b> – Used for continuous data.</li>
+<li><b>Multinomial Naive Bayes</b> – Used for text classification.</li>
+<li><b>Bernoulli Naive Bayes</b> – Used for binary features.</li>
 </ul>
+
 </div>
 
 <div class="section">
-<h2>5. Advantages</h2>
+
+<h2>4. Advantages</h2>
+
 <ul>
-<li>Fast and simple</li>
+<li>Fast and simple algorithm</li>
 <li>Works well with large datasets</li>
-<li>Good for text classification</li>
+<li>Effective for text classification</li>
+<li>Requires less training data</li>
 </ul>
+
 </div>
 
 <div class="section">
-<h2>6. Disadvantages</h2>
-<ul>
-<li>Assumes feature independence</li>
-<li>Less accurate if assumption is violated</li>
-</ul>
-</div>
 
-<div class="section">
-<h2>7. Applications</h2>
+<h2>5. Applications</h2>
+
 <ul>
-<li>Email spam filtering</li>
+<li>Email spam detection</li>
 <li>Sentiment analysis</li>
-<li>Document classification</li>
-<li>Recommendation systems</li>
+<li>News classification</li>
+<li>Document categorization</li>
 </ul>
+
 </div>
 
 </div>
 
 <footer>
-<p>Machine Learning Notes - Naive Bayes</p>
+<p>Machine Learning | Naive Bayes Algorithm</p>
 </footer>
 
 </body>
