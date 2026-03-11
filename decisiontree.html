@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decision Tree Notes</title>
+<title>Decision Tree</title>
 
 <style>
 
@@ -18,7 +18,7 @@ header{
     background:#2c3e50;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
 .container{
@@ -32,7 +32,7 @@ header{
     padding:20px;
     margin-bottom:20px;
     border-radius:8px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2{
@@ -40,22 +40,27 @@ h2{
 }
 
 ul{
-    margin-left:20px;
+    padding-left:20px;
 }
 
-.code-box{
-    background:#eef3ff;
-    padding:15px;
-    border-left:5px solid #3498db;
-    font-family:monospace;
-    white-space:pre;
+.highlight{
+    background:#e8f0fe;
+    padding:10px;
+    border-left:4px solid #3498db;
+    margin:10px 0;
+}
+
+.tree{
+    text-align:center;
+    margin-top:20px;
 }
 
 footer{
-    background:#2c3e50;
-    color:white;
     text-align:center;
     padding:15px;
+    background:#2c3e50;
+    color:white;
+    margin-top:20px;
 }
 
 </style>
@@ -64,119 +69,150 @@ footer{
 <body>
 
 <header>
-<h1>Decision Tree - Machine Learning Notes</h1>
-<p>Simple Explanation of Decision Tree Algorithm</p>
+<h1>Decision Tree Algorithm</h1>
+<p>Machine Learning Classification and Prediction Model</p>
 </header>
 
 <div class="container">
 
 <div class="section">
-<h2>1. Introduction</h2>
+<h2>1. What is a Decision Tree?</h2>
+
 <p>
-A Decision Tree is a supervised machine learning algorithm used for classification 
-and regression problems. It works like a tree structure where decisions are made 
-based on conditions.
+A Decision Tree is a supervised machine learning algorithm used for both
+classification and regression tasks. It works by splitting the dataset
+into smaller subsets while simultaneously developing a tree-like structure
+of decisions.
 </p>
+
+<p>
+Each internal node of the tree represents a decision based on a feature,
+each branch represents the outcome of that decision, and each leaf node
+represents the final prediction or class label.
+</p>
+
+<p>
+Decision Trees are easy to understand and interpret because they mimic
+human decision-making processes. They are widely used in fields such as
+finance, healthcare, marketing, and risk analysis.
+</p>
+
+<div class="highlight">
+Example: A bank may use a decision tree to decide whether a customer
+should receive a loan based on income, credit score, and employment status.
 </div>
+
+</div>
+
 
 <div class="section">
 <h2>2. Structure of a Decision Tree</h2>
+
 <ul>
-<li><b>Root Node</b> – Starting point of the tree</li>
-<li><b>Decision Nodes</b> – Nodes where data splits based on conditions</li>
-<li><b>Leaf Nodes</b> – Final output or prediction</li>
+<li><b>Root Node</b> – The starting point of the tree representing the entire dataset.</li>
+<li><b>Decision Node</b> – A node where the data is split based on a feature.</li>
+<li><b>Branch</b> – Represents the outcome of a decision rule.</li>
+<li><b>Leaf Node</b> – The final output or prediction.</li>
 </ul>
 
-<div class="code-box">
-        Age?
-       /    \
-    <30     >30
-    /         \
-Student?     Income?
- /    \        /   \
-Yes   No     High  Low
-Buy   Not    Buy   Not
 </div>
 
-</div>
 
 <div class="section">
-<h2>3. How Decision Trees Work</h2>
-<ol>
-<li>Start with the full dataset.</li>
-<li>Select the best feature to split the data.</li>
-<li>Create subsets based on the feature.</li>
-<li>Repeat the process for each subset.</li>
-<li>Stop when data is fully classified or depth limit is reached.</li>
-</ol>
-</div>
+<h2>3. Working of Decision Tree</h2>
 
-<div class="section">
-<h2>4. Splitting Criteria</h2>
+<p>
+The decision tree algorithm works by selecting the best feature to split
+the data based on certain criteria such as information gain, Gini index,
+or entropy.
+</p>
 
-<h3>Entropy</h3>
-<p>Measures impurity in the dataset.</p>
-
-<div class="code-box">
-Entropy = - Σ (p * log2(p))
-</div>
-
-<h3>Information Gain</h3>
-
-<div class="code-box">
-Information Gain = Entropy(parent) - Entropy(children)
-</div>
-
-<h3>Gini Index</h3>
-
-<div class="code-box">
-Gini = 1 - Σ (p²)
-</div>
-
-</div>
-
-<div class="section">
-<h2>5. Types of Decision Trees</h2>
 <ul>
-<li><b>Classification Tree</b> – Output is a category (Yes/No, Spam/Not Spam)</li>
-<li><b>Regression Tree</b> – Output is a numerical value (price, score)</li>
+<li><b>Step 1:</b> Select the best feature from the dataset.</li>
+<li><b>Step 2:</b> Split the dataset into subsets.</li>
+<li><b>Step 3:</b> Create decision nodes for each subset.</li>
+<li><b>Step 4:</b> Repeat the process recursively until stopping conditions are met.</li>
+<li><b>Step 5:</b> Assign final predictions at leaf nodes.</li>
 </ul>
+
 </div>
 
+
 <div class="section">
-<h2>6. Advantages</h2>
+<h2>4. Simple Decision Tree Example</h2>
+
+<p>
+Below is a simple example of a decision tree used to predict whether a
+person will play tennis based on weather conditions.
+</p>
+
+<div class="tree">
+
+<svg width="500" height="260">
+
+<!-- Root -->
+<rect x="190" y="10" width="120" height="40" fill="#3498db" rx="6"/>
+<text x="250" y="35" text-anchor="middle" fill="white">Weather?</text>
+
+<!-- Left Node -->
+<rect x="70" y="110" width="120" height="40" fill="#27ae60" rx="6"/>
+<text x="130" y="135" text-anchor="middle" fill="white">Play</text>
+
+<!-- Right Node -->
+<rect x="310" y="110" width="120" height="40" fill="#e74c3c" rx="6"/>
+<text x="370" y="135" text-anchor="middle" fill="white">Don't Play</text>
+
+<!-- Lines -->
+<line x1="250" y1="50" x2="130" y2="110" stroke="black"/>
+<line x1="250" y1="50" x2="370" y2="110" stroke="black"/>
+
+<!-- Labels -->
+<text x="170" y="80">Sunny</text>
+<text x="310" y="80">Rainy</text>
+
+</svg>
+
+</div>
+
+</div>
+
+
+<div class="section">
+<h2>5. Advantages of Decision Trees</h2>
+
 <ul>
-<li>Easy to understand and visualize</li>
-<li>Handles numerical and categorical data</li>
-<li>Requires little data preprocessing</li>
-<li>Works for classification and regression</li>
+<li>Easy to understand and interpret</li>
+<li>Requires little data preparation</li>
+<li>Works with both numerical and categorical data</li>
+<li>Handles complex datasets effectively</li>
 </ul>
+
 </div>
 
-<div class="section">
-<h2>7. Disadvantages</h2>
-<ul>
-<li>Can easily overfit</li>
-<li>Sensitive to small data changes</li>
-<li>Can become very complex</li>
-</ul>
-</div>
 
 <div class="section">
-<h2>8. Applications</h2>
+<h2>6. Real World Applications</h2>
+
 <ul>
 <li>Medical diagnosis</li>
+<li>Loan approval prediction</li>
 <li>Fraud detection</li>
 <li>Customer segmentation</li>
-<li>Credit risk analysis</li>
-<li>Recommendation systems</li>
+<li>Marketing analysis</li>
 </ul>
+
+<p>
+Decision trees are widely used because they are simple, powerful,
+and easy to visualize compared to many other machine learning models.
+</p>
+
 </div>
+
 
 </div>
 
 <footer>
-<p>Machine Learning Notes - Decision Tree</p>
+<p>Machine Learning | Decision Tree Algorithm</p>
 </footer>
 
 </body>
